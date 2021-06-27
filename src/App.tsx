@@ -5,6 +5,7 @@ import SavedList from "./components/SavedList";
 
 function App() {
   return (
+      <div className={'app'}>
     <div className="container">
         <div className={'halfWidth'}>
       <CommonList/>
@@ -13,6 +14,7 @@ function App() {
       <SavedList/>
           </div>
     </div>
+      </div>
   );
 }
 
