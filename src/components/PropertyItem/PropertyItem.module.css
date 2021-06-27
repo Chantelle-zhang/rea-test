@@ -1,0 +1,33 @@
+.baseBanner{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom:20px;
+    width:80%;
+    padding:10px 10px 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.greenBanner{
+    background-color:lightgreen ;
+}
+
+.redBanner{
+    background-color:lightgreen ;
+}
+
+.item{
+    position: relative;
+    -webkit-box-shadow: 1px 1px 11px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 11px -4px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 11px -4px rgba(0,0,0,0.75);
+
+}
+.top{
+    width:100%
+}
+.mainImageStyle{
+    width:100%
+}
