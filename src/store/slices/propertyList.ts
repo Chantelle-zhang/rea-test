@@ -1,18 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 import data from "../../data"
 
 export const initialState = {
   commonList:data.results,
-  savedList:[]
+  savedList:data.saved
 
-}
-
-const moveItemBetweenList=(id:string,listA:{id:string}[],listB:{id:string}[])=>{
-  const item= listA.find((item)=>item.id===id)
-  if(item) {
-    listB.push(item)
-  }
-  listA=listA.filter((item)=>item.id!==id)
 }
 
 const propertyListSlice = createSlice({
@@ -21,14 +13,19 @@ const propertyListSlice = createSlice({
   reducers: {
 
     moveItemFromSavedListToCommonList: (state, { payload }) => {
-
-      const {savedList,commonList}=state
-      moveItemBetweenList(payload,savedList,commonList)
+      const item= state.savedList.find((item)=>item.id===payload)
+      if(item) {
+        state.commonList.push(item)
+      }
+      state.savedList=state.savedList.filter((item)=>item.id!==payload)
     },
 
     moveItemFromCommonListToSavedList: (state, { payload }) => {
-      const {savedList,commonList}=state
-      moveItemBetweenList(payload,commonList,savedList)
+      const item= state.commonList.find((item)=>item.id===payload)
+      if(item) {
+        state.savedList.push(item)
+      }
+      state.commonList=state.commonList.filter((item)=>item.id!==payload)
     },
 }
 }
