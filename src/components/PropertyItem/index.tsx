@@ -24,8 +24,8 @@ const PropertyItem = ({info, showAdd, onClick}: PropertyItemProps) => {
         id,
         mainImage
     } = info
-    const {greenBanner,redBanner,baseBanner,item,top,mainImageStyle}=styles
-    const bannerClass=`${showAdd?greenBanner:redBanner} ${baseBanner}`
+    const {greenBanner,redBanner,baseBanner,item,top,mainImageStyle,show,hide}=styles
+    const bannerClass=`${showBanner?show:hide} ${showAdd?greenBanner:redBanner} ${baseBanner}`
     const exposeBanner=()=>{
         setShowBanner(true)
     }
@@ -42,9 +42,8 @@ const PropertyItem = ({info, showAdd, onClick}: PropertyItemProps) => {
             <div className={top} style={{backgroundColor:primary}}><img src={logo}/></div>
             <img src={mainImage} className={mainImageStyle}/>
             <p>{price}</p>
-            {showBanner?
-                <div className={bannerClass} onClick={onClick}>{showAdd ? 'Add Property' :'Remove Property'}</div>:null
-            }
+            <div className={bannerClass} onClick={onClick}>{showAdd ? 'Add Property' :'Remove Property'}</div>
+
         </div>
     )
 
