@@ -14,12 +14,12 @@ const PropertyList = ({list, attribute, clickItem}: PropertyListProps) => {
  const showAdd=attribute==='commonList'
     return (
 
-        <div>
+        <ul data-testid={`${attribute}`}>
             {list.map((item)=>{
                 const {id}=item
                return <PropertyItem key={id} info={item} showAdd={showAdd} onClick={()=>clickItem(id)}/>
             })}
-        </div>
+        </ul>
     )
 
 }
