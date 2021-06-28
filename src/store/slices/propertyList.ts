@@ -12,26 +12,28 @@ const propertyListSlice = createSlice({
   initialState,
   reducers: {
 
-    moveItemFromSavedListToCommonList: (state, { payload }) => {
+    removeItemFromSavedList: (state, { payload }) => {
       const item= state.savedList.find((item)=>item.id===payload)
       if(item) {
-        state.commonList.push(item)
+        state.savedList=state.savedList.filter((item)=>item.id!==payload)
       }
-      state.savedList=state.savedList.filter((item)=>item.id!==payload)
+
     },
 
-    moveItemFromCommonListToSavedList: (state, { payload }) => {
+    addItemToSavedList: (state, { payload }) => {
       const item= state.commonList.find((item)=>item.id===payload)
       if(item) {
-        state.savedList.push(item)
+        const itemExistedInSavedList=state.savedList.find((item)=>item.id===payload)
+        if(!itemExistedInSavedList) {
+          state.savedList.push(item)
+        }
       }
-      state.commonList=state.commonList.filter((item)=>item.id!==payload)
     },
 }
 }
 )
 // Three actions generated from the slice
-export const { moveItemFromSavedListToCommonList, moveItemFromCommonListToSavedList} = propertyListSlice.actions
+export const { removeItemFromSavedList, addItemToSavedList} = propertyListSlice.actions
 
 // A selector
 export const propertyListSelector = (state: { propertyList: any }) => state.propertyList
