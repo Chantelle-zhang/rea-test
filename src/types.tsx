@@ -1,6 +1,5 @@
-
-export type Item= {
-    "price":number,
+export type Item = {
+    "price": number,
     "agency": {
         "brandingColors": {
             "primary": string

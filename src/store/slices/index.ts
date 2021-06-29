@@ -1,10 +1,9 @@
-
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 import propertyListReducer from './propertyList'
 
 
 const rootReducer = combineReducers({
-  propertyList: propertyListReducer,
+    propertyList: propertyListReducer,
 
 })
 

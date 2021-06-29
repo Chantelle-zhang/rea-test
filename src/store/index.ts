@@ -2,14 +2,14 @@ import {configureStore} from "@reduxjs/toolkit";
 import rootReducer from "./slices";
 
 
-type state={
-    propertyList:{
-        commonList:{}[],
-        savedList:{}[]
+type state = {
+    propertyList: {
+        commonList: {}[],
+        savedList: {}[]
     }
 }
 
 
-const store = configureStore({ reducer: rootReducer })
+const store = configureStore({reducer: rootReducer})
 
 export default store

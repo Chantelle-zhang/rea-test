@@ -5,11 +5,11 @@ import PropertyList from "../PropertyList";
 import {Item} from "../../types";
 
 
-const SavedList=()=>{
+const SavedList = () => {
 
-    const {savedList}=useSelector(propertyListSelector)
-    const dispatch=useDispatch()
-    const clickItem=(id:Item['id'])=>{
+    const {savedList} = useSelector(propertyListSelector)
+    const dispatch = useDispatch()
+    const clickItem = (id: Item['id']) => {
         dispatch(removeItemFromSavedList(id))
 
     }

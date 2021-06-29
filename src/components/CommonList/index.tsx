@@ -5,13 +5,12 @@ import {addItemToSavedList, propertyListSelector} from "../../store/slices/prope
 import {Item} from "../../types";
 
 
+const CommonList = () => {
 
-const CommonList=()=>{
-
-    const {commonList}=useSelector(propertyListSelector)
-    const dispatch=useDispatch()
-    const clickItem=(id:Item['id'])=>{
-        dispatch( addItemToSavedList(id))
+    const {commonList} = useSelector(propertyListSelector)
+    const dispatch = useDispatch()
+    const clickItem = (id: Item['id']) => {
+        dispatch(addItemToSavedList(id))
     }
     return <PropertyList list={commonList} attribute={'commonList'} clickItem={clickItem}/>
 }

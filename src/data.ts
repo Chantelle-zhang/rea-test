@@ -1,4 +1,4 @@
-const data={
+const data = {
 
     "results": [{
         "price": "$726,500",

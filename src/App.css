@@ -1,13 +1,15 @@
 .halfWidth {
- width:48%
+    width: 48%
 }
-.container{
- display:flex;
- justify-content:space-between;
- max-width: 800px;
- width:80%
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 80%
 }
-.app{
- display:flex;
- justify-content: center;
+
+.app {
+    display: flex;
+    justify-content: center;
 }
