@@ -34,7 +34,6 @@ const PropertyItem = ({info, showAdd, onClick}: PropertyItemProps) => {
         setShowBanner(false)
     }
 
-
     return (
 
         <li className={item} onMouseOver={exposeBanner} onMouseLeave={hideBanner} data-testid={id}>
@@ -46,10 +45,8 @@ const PropertyItem = ({info, showAdd, onClick}: PropertyItemProps) => {
                     showAdd ? 'Add Property' : 'Remove Property'
                 }
             </div>
-
         </li>
     )
-
 }
 
 
