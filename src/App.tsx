@@ -11,9 +11,11 @@ const App = () => {
             <div className={'app'}>
                 <div className="container">
                     <div className={'halfWidth'}>
+                        <h2>Results</h2>
                         <CommonList/>
                     </div>
                     <div className={'halfWidth'}>
+                        <h2>Saved Properties</h2>
                         <SavedList/>
                     </div>
                 </div>
