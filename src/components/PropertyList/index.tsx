@@ -21,7 +21,6 @@ const PropertyList = ({list, attribute, clickItem}: PropertyListProps) => {
             })}
         </ul>
     )
-
 }
 
 
